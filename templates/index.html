@@ -14,7 +14,10 @@
     </div>
     <div class="top-actions">
       <button class="ghost" id="reportBtn">Report</button>
-      <button class="ghost" id="importBtn">Import JSON</button><input id="importFile" type="file" accept="application/json" hidden><button class="ghost" id="exportBtn">Export JSON</button>
+      <button class="ghost" id="importBtn">Import JSON</button>
+      <input id="importFile" type="file" accept="application/json" hidden>
+      <button class="ghost" id="exportBtn">Export JSON</button>
+      <button class="ghost" id="addCategoryBtn">+ Category</button>
       <button class="primary" id="addBtn">+ Add task</button>
     </div>
   </header>
@@ -43,6 +46,7 @@
       </div>
       <form id="taskForm" class="form">
         <input type="hidden" id="taskId">
+        <input type="hidden" id="fParent">
         <label>Title<input id="fTitle" required placeholder="e.g. Implement a non-blocking HTTP parser"></label>
         <div class="two-col">
           <label>Category<select id="fCategory"></select></label>
@@ -52,12 +56,12 @@
           <label>Priority<select id="fPriority"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></label>
           <label>Due<input id="fDue" type="datetime-local"></label>
         </div>
-        <label>Parent task<select id="fParent"><option value="">None</option></select></label>
         <label>Link<input id="fUrl" type="url" placeholder="https://..."></label>
         <label>Notes<textarea id="fNotes" rows="6" placeholder="What you learned, what is confusing, next action..."></textarea></label>
 
         <div class="reminder-box">
           <div class="section-title">Reminder</div>
+          <p class="helper">A one-time overdue notification is automatic after the due time. Use this section for additional reminders.</p>
           <label class="inline-check"><input id="rEnabled" type="checkbox"> Enable notification</label>
           <div class="two-col">
             <label>Repeat<select id="rMode"><option value="once">Once</option><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="interval">Every N minutes</option></select></label>
@@ -72,6 +76,22 @@
           <div></div>
           <button type="button" class="ghost" data-close="1">Cancel</button>
           <button type="submit" class="primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="categoryModal" aria-hidden="true">
+    <div class="modal-card category-dialog">
+      <div class="drawer-head">
+        <div><div class="eyebrow">NEW CATEGORY</div><h3>Add category</h3></div>
+        <button class="icon-btn" data-category-close="1">×</button>
+      </div>
+      <form id="categoryForm" class="form">
+        <label>Name<input id="categoryName" required placeholder="e.g. Systems CS"></label>
+        <label>Accent<select id="categoryColor"><option value="purple">Purple</option><option value="teal">Teal</option></select></label>
+        <div class="drawer-actions category-actions">
+          <div></div><button type="button" class="ghost" data-category-close="1">Cancel</button><button type="submit" class="primary">Add category</button>
         </div>
       </form>
     </div>
