@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {"id":"systems","name":"Systems CS","color":"purple","position":0},
+    {"id":"math_algo","name":"Math & Algorithms","color":"purple","position":1},
+    {"id":"ml","name":"Machine Learning","color":"teal","position":2},
+    {"id":"backend","name":"Backend","color":"teal","position":3},
+    {"id":"cp","name":"Competitive Programming","color":"purple","position":4}
+  ],
+  "tasks": [
+    {"id":"s1","category_id":"systems","parent_id":null,"title":"Read about virtual memory","kind":"research","url":"https://man7.org/linux/man-pages/man2/mmap.2.html","notes":"Understand page tables, mapping and copy-on-write.","priority":"high","due_at":null,"completed":0,"created_at":"2026-08-19T00:00:00","updated_at":"2026-08-19T00:00:00"},
+    {"id":"s2","category_id":"systems","parent_id":"s1","title":"Make a one-page summary","kind":"task","url":"","notes":"","priority":"medium","due_at":null,"completed":0,"created_at":"2026-08-19T00:00:00","updated_at":"2026-08-19T00:00:00"},
+    {"id":"b1","category_id":"backend","parent_id":null,"title":"Build PostgreSQL repository layer","kind":"project","url":"","notes":"Implement CRUD and error handling.","priority":"high","due_at":null,"completed":0,"created_at":"2026-08-19T00:00:00","updated_at":"2026-08-19T00:00:00"},
+    {"id":"ml1","category_id":"ml","parent_id":null,"title":"Watch text classification lesson","kind":"video","url":"https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html","notes":"Rebuild the tiny classifier locally.","priority":"medium","due_at":null,"completed":0,"created_at":"2026-08-19T00:00:00","updated_at":"2026-08-19T00:00:00"}
+  ],
+  "reminders": []
+}
